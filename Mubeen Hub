@@ -1,4 +1,4 @@
-local player = game.players.LocalPlayers
+local player = game.Players.LocalPlayer
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
@@ -52,8 +52,26 @@ Time = <number> - The duration of the notfication.
 
 Tab:AddButton({
 	Name = "Speed!",
-	Callback = function(Speed)
-      		player.Character.Humanoid.Walkspeed = 200
+	Callback = function()
+      		player.Character.Humanoid.WalkSpeed = 200
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Inf Health!",
+	Callback = function()
+      		local function MakeInvicible(hum : Humanoid)
+   hum:SetStateEnabled(Enum.HumanoidStateType.Dead,false)
+   hum.BreakJointsOnDeath = false
+   hum.MaxHealth = math.huge
+   hum.Health = hum.MaxHealth
+   hum.HealthChanged:Connect(function() hum.Health = hum.MaxHealth end)
+end
   	end    
 })
 
