@@ -65,8 +65,7 @@ Callback = <function> - The function of the button.
 Tab:AddButton({
 	Name = "Auto Farm!",
 	Callback = function()
-      	        while wait() do
-_G.autofaem = true
+      	        _G.autofaem = true
 while _G.autofaem == true do
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-57, -360, 9493)
 wait()
