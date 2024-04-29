@@ -63,14 +63,14 @@ Callback = <function> - The function of the button.
 ]]
 
 Tab:AddButton({
-	Name = "Inf Health!",
+	Name = "Auto Farm!",
 	Callback = function()
-      		local function MakeInvicible(hum : Humanoid)
-   hum:SetStateEnabled(Enum.HumanoidStateType.Dead,false)
-   hum.BreakJointsOnDeath = false
-   hum.MaxHealth = math.huge
-   hum.Health = hum.MaxHealth
-   hum.HealthChanged:Connect(function() hum.Health = hum.MaxHealth end)
+      	        while wait() do
+_G.autofaem = true
+while _G.autofaem == true do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-57, -360, 9493)
+wait()
+     wait()
 end
   	end    
 })
