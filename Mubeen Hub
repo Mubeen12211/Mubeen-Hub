@@ -62,10 +62,9 @@ Name = <string> - The name of the button.
 Callback = <function> - The function of the button.
 ]]
 
-Tab:AddButton({
-	Name = "Auto Farm!",
-	Callback = function()
-      	        game:GetService("RunService").Stepped:connect(
+local Toggle1 = Section1:CreateToggle("AutoFarm", Settings.AutoFarm, function(State)
+Settings.AutoFarm = State
+game:GetService("RunService").Stepped:connect(
     function()
         if Settings.AutoFarm then
             game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):ChangeState(11)
@@ -92,10 +91,3 @@ game.Players.LocalPlayer.CharacterAdded:Connect(
     end
 )
 end)
-  	end    
-})
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
